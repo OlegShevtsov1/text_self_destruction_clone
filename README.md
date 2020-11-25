@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Build a web application which creates a text self-destructing ​ messages​ .
+Flow:
+1. User posts message to the ​ REST API​ endpoint
+2. App generates a link and returns it as a response
+3. User can do request to the provided link and see saved message only once
+4. On second request info message “You already requested this message” should be
+returned
 
-Things you may want to cover:
+Cover your application with the unit tests using rspec.
 
-* Ruby version
+Push the code to Bitbucket or Github.
 
-* System dependencies
+Deploy your application to Heroku.
 
-* Configuration
+Provide links to the codebase and app.
 
-* Database creation
+Bonus points for implementing:
 
-* Database initialization
+1. Messages stored on the server side should be encrypted using AES algorithm (you
+can use any library for text encryption)
+2. Messages should be encrypted on frontend side using password and should be sent
+to backend in encrypted format (to view message user should enter a right password)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Please pay attention to the best practices for REST API design, error handling and status
+codes.
