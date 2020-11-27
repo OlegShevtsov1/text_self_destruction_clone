@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
   end
 
   def entity_error(status, errors)
-    service = EntityErrorService.new(status, errors)
+    service = Errors::EntityErrorService.new(status, errors)
     render json: ErrorSerializer.new(service), status: status
   end
 end

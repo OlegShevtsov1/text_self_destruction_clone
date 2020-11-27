@@ -3,15 +3,22 @@ class MessageForm
 
   MAX_SIZE = 100
 
-  attr_accessor :description
+  attr_accessor :message, :description
 
   validates :description, presence: true
   validates :description, length: { maximum: MAX_SIZE,
                                     message: I18n.t('validation.message.wrong_message_size', max_size: MAX_SIZE) }
 
-  def save
-    return unless valid?
+  def initialize(message, params)
+    @params = params
+    @message = message
+    self.attributes = params
+  end
 
-    Message.create(description: description)
+  def call
+    return self unless valid?
+
+    message.new_record? ? message.save : message.update(@params)
+    message
   end
 end

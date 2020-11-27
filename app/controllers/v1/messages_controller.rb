@@ -1,12 +1,11 @@
 module V1
   class MessagesController < ApplicationController
     def create
-      message_form = MessageForm.new(message_params)
-      message = message_form.save
-      if message
-        render json: MessageLinkSerializer.new(message).serializable_hash, status: :created
+      service = Messages::MessageCreateService.new(message_params).call
+      if service.errors.empty?
+        render json: MessageLinkSerializer.new(service).serializable_hash, status: :created
       else
-        entity_error(:unprocessable_entity, message_form.errors)
+        entity_error(:unprocessable_entity, service.errors)
       end
     end
 
@@ -14,7 +13,7 @@ module V1
       if message.visit
         render json: MessageRequestedSerializer.new(message).serializable_hash, status: :forbidden
       else
-        render json: MessageRequestService.new(message).call, status: :ok
+        render json: Messages::MessageShowService.new(message).call, status: :ok
       end
     end
 
