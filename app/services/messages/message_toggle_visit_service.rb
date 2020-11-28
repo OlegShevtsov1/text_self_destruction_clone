@@ -1,5 +1,5 @@
 module Messages
-  class MessageShowService
+  class MessageToggleVisitService
     attr_reader :message
 
     def initialize(message)
@@ -7,8 +7,9 @@ module Messages
     end
 
     def call
+      return if message.visit
+
       message_requested
-      MessageResponseSerializer.new(message).serializable_hash.merge({ status: :ok })
     end
 
     private

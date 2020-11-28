@@ -10,10 +10,11 @@ module V1
     end
 
     def show
-      if message.visit
-        render json: MessageRequestedSerializer.new(message).serializable_hash, status: :forbidden
+      service = Messages::MessageToggleVisitService.new(message).call
+      if service
+        render json: MessageResponseSerializer.new(message).serializable_hash, status: :ok
       else
-        render json: Messages::MessageShowService.new(message).call, status: :ok
+        render json: MessageRequestedSerializer.new(message).serializable_hash, status: :forbidden
       end
     end
 
