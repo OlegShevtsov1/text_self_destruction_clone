@@ -20,7 +20,7 @@
     + Body
 
             {
-              "description": "aut"
+              "description": "praesentium"
             }
 
 + Response 201
@@ -33,10 +33,10 @@
 
             {
               "data": {
-                "id": "77",
+                "id": "1",
                 "type": "message_link",
                 "links": {
-                  "url": "v1/messages/77"
+                  "url": "v1/messages/1"
                 }
               }
             }
@@ -79,10 +79,10 @@
 ### Get a message [GET /v1/messages/{id}]
 
 + Parameters
-    + id: `78` (number, required)
+    + id: `2` (number, required)
 
 + Request returns status ok
-**GET**&nbsp;&nbsp;`/v1/messages/78`
+**GET**&nbsp;&nbsp;`/v1/messages/2`
 
     + Headers
 
@@ -99,17 +99,16 @@
 
             {
               "data": {
-                "id": "78",
+                "id": "2",
                 "type": "message_response",
                 "attributes": {
-                  "message": "qui"
+                  "message": "odio"
                 }
-              },
-              "status": "ok"
+              }
             }
 
 + Request returns status forbidden
-**GET**&nbsp;&nbsp;`/v1/messages/79`
+**GET**&nbsp;&nbsp;`/v1/messages/3`
 
     + Headers
 
@@ -126,7 +125,7 @@
 
             {
               "data": {
-                "id": "79",
+                "id": "3",
                 "type": "message_requested",
                 "attributes": {
                   "message": "You already requested this message"
