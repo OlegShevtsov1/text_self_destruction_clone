@@ -1,0 +1,1 @@
+Rails.configuration.visit = :visit
