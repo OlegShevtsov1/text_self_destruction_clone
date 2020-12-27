@@ -9,13 +9,13 @@ module Messages
     def call
       return if message.visit
 
-      message_requested
+      message_requested(Rails.configuration.visit)
     end
 
     private
 
-    def message_requested
-      message.toggle :visit
+    def message_requested(method)
+      message.toggle method
       message.save
     end
   end
