@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.reddit.com/r/news.json?limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 429
+      message: Too Many Requests
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '46'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Ua-Compatible:
+      - IE=edge
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Moose
+      Cache-Control:
+      - max-age=0, must-revalidate
+      X-Moose:
+      - majestic
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 29 Dec 2020 12:48:27 GMT
+      Via:
+      - 1.1 varnish
+      Set-Cookie:
+      - csv=1; Max-Age=63072000; Domain=.reddit.com; Path=/; Secure; SameSite=None
+      - edgebucket=CCC3tKiRzeywyKwz1W; Domain=reddit.com; Max-Age=63071999; Path=/;  secure
+      - loid=00000000009jy624x7.2.1609246107040.Z0FBQUFBQmY2eVdiMVVNWG5GRUpMVXV2c2huYkJ5bWhDeTB4T1hmeVhNam9rV1RvLXUwVWxtZURwc19TbFk4d2M4Ty1fdldGVzlYS01rcWpTcXhkRlV0Q3g4QkRVUUFpbWZUbW9hUU9SNGVyQVpJTlphclUxekdacHFOZkhuM19LeUplM3lqTjdIWUU;
+        Domain=reddit.com; Max-Age=63071999; Path=/; expires=Thu, 29-Dec-2022 12:48:27
+        GMT; secure; SameSite=None; Secure
+      - session_tracker=wh2FyhAdy9ZqCHEyod.0.1609246107040.Z0FBQUFBQmY2eVdiODFmbWZEeEVvUHFYVzMzR0M2SDNqWDZ4ZlMtVXpGVE9ZMnBUNDVpQThheWZfSjV5ODF6Y2oyU2tIUXNvNjhLRHFWellGeWxUaEdYS3Z0eGYyZUZvb0I3Y3N2c0xwU2VzOGtqSVVnblljcVJ0M014TkFueFYwclRwWkhBdm9wcVo;
+        Domain=reddit.com; Max-Age=7199; Path=/; expires=Tue, 29-Dec-2020 14:48:27
+        GMT; secure; SameSite=None; Secure
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Server:
+      - snooserv
+    body:
+      encoding: UTF-8
+      string: '{"message": "Too Many Requests", "error": 429}'
+  recorded_at: Tue, 29 Dec 2020 12:48:27 GMT
+recorded_with: VCR 6.0.0
